@@ -1,9 +1,9 @@
 # Skills in this repo
 
-These are project-level Claude Code skills that travel with this repo, so
-this template works the same way regardless of which machine or account it
-runs on. Each skill is a folder containing a `SKILL.md` (and, optionally, a
-`references/` subfolder with supporting detail).
+These are reusable Claude Code skills scoped to this project, so the same
+conventions and quality bar apply regardless of which machine or account
+this repo runs on. Each skill is a folder containing a `SKILL.md` (and,
+optionally, a `references/` subfolder with supporting detail).
 
 | Skill | Use for |
 |---|---|
@@ -21,10 +21,11 @@ runs on. Each skill is a folder containing a `SKILL.md` (and, optionally, a
 ## Adding a new skill
 
 Add a skill here when you notice yourself repeating the same guidance
-across more than one project — not speculatively. A skill should be:
+across more than one part of this project — not speculatively. A skill
+should be:
 
-- **Reusable** — applies across most/all web projects built from this
-  template, not specific to one client or product.
+- **Reusable** — applies broadly across this site's pages and features,
+  not specific to one one-off page or component.
 - **Concise** — a checklist or set of decisions, not a tutorial.
 - **Self-contained** — a fresh reader with no other context can follow it.
 
