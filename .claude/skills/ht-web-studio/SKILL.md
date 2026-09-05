@@ -66,7 +66,7 @@ verify — and defers detailed rules to the specialized skills below.
 
 - Test important functionality yourself before reporting completion —
   don't rely on "it should work."
-- Run the `ship-checklist` skill before declaring any page, feature, or
+- Run the `testing-qa` skill before declaring any page, feature, or
   project finished.
 
 ## Scope

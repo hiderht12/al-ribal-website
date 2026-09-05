@@ -10,14 +10,13 @@ runs on. Each skill is a folder containing a `SKILL.md` (and, optionally, a
 | `ht-web-studio` | The primary end-to-end workflow (plan, build, verify) for any real web-development task. |
 | `ui-ux-pro` | Making UI/UX design decisions — hierarchy, layout, navigation, interaction states — for a screen, component, or flow. |
 | `arabic-rtl` | Implementing correct Arabic/RTL and bilingual Arabic-English interfaces. |
-| `testing-qa` | Verifying functionality, states, and regressions before calling work complete. |
+| `testing-qa` | Verifying functionality, states, regressions, and pre-ship cleanliness before calling work complete. |
 | `seo-performance` | Semantic markup, meta data, crawlability, asset weight, and Core Web Vitals decisions. |
 | `api-integrations` | Connecting to external APIs/services — contracts, auth, secrets, error states, and reliability. |
 | `dashboard-builder` | Building dashboards/admin interfaces — information hierarchy, data representation, roles, and permissions. |
 | `3d-web-experiences` | Choosing between true 3D, 360 image viewers, image galleries, and decorative effects for product visualization. |
 | `design-system` | Establishing or applying a project's design tokens, typography, and component conventions before building UI. |
 | `frontend-scaffold` | Choosing a stack and laying out a new project's folder structure at the start of a build. |
-| `ship-checklist` | The quality gate to run before calling any page or feature done. |
 
 ## Adding a new skill
 

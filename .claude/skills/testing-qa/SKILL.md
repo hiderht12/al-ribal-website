@@ -1,6 +1,6 @@
 ---
 name: testing-qa
-description: Specialized quality-assurance and testing expert — verifying functionality, states, and regressions before work is called done. Use before declaring any page, feature, or project complete, and whenever changes could affect existing behavior.
+description: Specialized quality-assurance and testing expert — verifying functionality, states, regressions, and pre-ship cleanliness before work is called done. Use before declaring any page, feature, or project complete, and whenever changes could affect existing behavior.
 ---
 
 # Testing & QA
@@ -37,6 +37,10 @@ proving those things function, not deciding what they should look like.
   runtime failures (failed requests, unhandled exceptions).
 - **Accessibility basics** — keyboard reachability, visible focus, and
   labeled controls on anything touched, when relevant to the change.
+- **Cleanliness** — no leftover placeholder text, TODO markers, or
+  commented-out code; no layout overflow, overlapping text, or broken
+  wrapping at the widths checked; demo/sample data is clearly labeled as
+  such, never presented as if it were live/real.
 
 ## How to test
 
