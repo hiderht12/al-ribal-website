@@ -1,13 +1,9 @@
-import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { buttonVariants } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
+import { siteConfig } from "@/lib/site-config";
 
-/**
- * No real contact channel (phone/email/WhatsApp) has been provided yet, so
- * this button is intentionally a plain, non-wired call-to-action rather
- * than a link to a fabricated address — see the implementation notes for
- * what's needed to make it functional.
- */
 export function ContactCta() {
   return (
     <Section id="contact" tone="alt">
@@ -17,11 +13,16 @@ export function ContactCta() {
           جاهزون لمناقشة احتياجاتكم الأمنية والتقنية؟
         </h2>
         <p className="max-w-xl text-lg text-ink-500">
-          تواصلوا معنا للحصول على استشارة وعرض سعر يناسب متطلبات منشأتكم.
+          تواصلوا معنا عبر الهاتف أو تيليجرام للاستفسار عن المنتجات والأسعار.
         </p>
-        <Button variant="primary" size="lg" type="button">
-          اطلب عرض سعر
-        </Button>
+        <div className="flex flex-wrap gap-4">
+          <a href={siteConfig.phoneHref} className={buttonVariants({ variant: "primary", size: "lg" })}>
+            اتصل بنا
+          </a>
+          <Link href="/contact" className={buttonVariants({ variant: "secondary", size: "lg" })}>
+            جميع طرق التواصل
+          </Link>
+        </div>
       </Container>
     </Section>
   );

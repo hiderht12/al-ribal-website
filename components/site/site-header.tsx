@@ -1,8 +1,10 @@
 "use client";
 
 import * as React from "react";
+import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
+import { siteConfig } from "@/lib/site-config";
 import { cn } from "@/lib/utils";
 import { NAV_LINKS } from "./nav-links";
 
@@ -34,28 +36,28 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b-2 border-gold-500 bg-ink-950">
       <Container className="flex h-16 items-center justify-between">
-        <a href="#top" className="font-heading text-lg font-bold text-white">
-          الريبال الذهبي
-        </a>
+        <Link href="/" className="font-heading text-lg font-bold text-white">
+          {siteConfig.name}
+        </Link>
 
         <nav className="hidden items-center gap-8 lg:flex">
           {NAV_LINKS.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               className="font-body text-sm text-ink-300 transition-colors hover:text-gold-400"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
-        <a
-          href="#contact"
+        <Link
+          href="/contact"
           className={cn(buttonVariants({ variant: "primary", size: "sm" }), "hidden lg:inline-flex")}
         >
-          اطلب عرض سعر
-        </a>
+          تواصل معنا
+        </Link>
 
         <button
           type="button"
@@ -108,22 +110,22 @@ export function SiteHeader() {
         )}
       >
         {NAV_LINKS.map((link) => (
-          <a
+          <Link
             key={link.href}
             href={link.href}
             onClick={() => setOpen(false)}
             className="rounded-sm px-3 py-3 font-body text-base text-ink-200 hover:bg-white/5 hover:text-gold-400"
           >
             {link.label}
-          </a>
+          </Link>
         ))}
-        <a
-          href="#contact"
+        <Link
+          href="/contact"
           onClick={() => setOpen(false)}
           className={cn(buttonVariants({ variant: "primary" }), "mt-4 justify-center")}
         >
-          اطلب عرض سعر
-        </a>
+          تواصل معنا
+        </Link>
       </div>
     </header>
   );

@@ -1,9 +1,15 @@
+import type { Metadata } from "next";
 import { CompanyIntro } from "@/components/site/company-intro";
 import { ContactCta } from "@/components/site/contact-cta";
-import { FeaturedProduct } from "@/components/site/featured-product";
+import { FeaturedProducts } from "@/components/site/featured-products";
 import { Hero } from "@/components/site/hero";
 import { SolutionsOverview } from "@/components/site/solutions-overview";
-import { TechnicalSpecsSection } from "@/components/site/technical-specs";
+import { siteConfig } from "@/lib/site-config";
+
+export const metadata: Metadata = {
+  title: `${siteConfig.name} — حلول متكاملة للأمن والمراقبة والشبكات`,
+  description: siteConfig.description,
+};
 
 export default function Home() {
   return (
@@ -11,8 +17,7 @@ export default function Home() {
       <Hero />
       <CompanyIntro />
       <SolutionsOverview />
-      <FeaturedProduct />
-      <TechnicalSpecsSection />
+      <FeaturedProducts />
       <ContactCta />
     </>
   );

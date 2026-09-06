@@ -17,6 +17,8 @@ const buttonVariants = cva(
           "bg-gold-500 text-ink-950 hover:bg-gold-400 active:bg-gold-600 focus-visible:outline-ink-950 disabled:bg-ink-300 disabled:text-ink-500",
         secondary:
           "border-[1.5px] border-ink-950 bg-transparent text-ink-950 hover:bg-ink-950/5 active:bg-ink-950/10 focus-visible:outline-ink-950 disabled:border-ink-300 disabled:text-ink-400",
+        "secondary-inverse":
+          "border-[1.5px] border-white bg-transparent text-white hover:bg-white/10 active:bg-white/15 focus-visible:outline-white disabled:border-ink-600 disabled:text-ink-500",
         ghost:
           "bg-transparent text-ink-700 hover:text-gold-600 focus-visible:outline-ink-950 disabled:text-ink-400",
         destructive:

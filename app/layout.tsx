@@ -1,12 +1,24 @@
 import type { Metadata } from "next";
+import { FloatingContact } from "@/components/site/floating-contact";
 import { SiteFooter } from "@/components/site/site-footer";
 import { SiteHeader } from "@/components/site/site-header";
 import { fontVariables } from "@/lib/fonts";
+import { siteConfig } from "@/lib/site-config";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "الريبال الذهبي",
-  description: "الريبال الذهبي — حلول المراقبة الأمنية والشبكات.",
+  title: {
+    default: `${siteConfig.name} — حلول المراقبة الأمنية والشبكات`,
+    template: `%s | ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
+  keywords: ["الريال الذهبي", "Alribal Security", "كاميرات مراقبة", "HASNET", "Xvision", "NVR", "PoE", "العراق", "بغداد"],
+  openGraph: {
+    title: siteConfig.name,
+    description: siteConfig.description,
+    locale: "ar_IQ",
+    type: "website",
+  },
 };
 
 /**
@@ -26,6 +38,7 @@ export default function RootLayout({
         <SiteHeader />
         {children}
         <SiteFooter />
+        <FloatingContact />
       </body>
     </html>
   );

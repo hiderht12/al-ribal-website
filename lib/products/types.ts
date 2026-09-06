@@ -1,51 +1,46 @@
-/**
- * Text that differs between Arabic and English. Arabic is required and
- * authoritative; English is added once a real translation exists — never
- * back-filled with a placeholder.
- *
- * Brand names and model codes are NOT this type: per the arabic-rtl skill,
- * technical designations are preserved exactly and never translated, so
- * `Product.brand` / `Product.model` below are plain strings.
- */
-export interface LocalizedText {
-  ar: string;
-  en?: string;
+export type CategorySlug = "camera" | "nvr" | "switch";
+
+export interface Category {
+  slug: CategorySlug;
+  /** Filter chip label — matches the exact labels requested for the site. */
+  label: string;
+}
+
+export const CATEGORIES: Category[] = [
+  { slug: "camera", label: "الكاميرات" },
+  { slug: "nvr", label: "NVR" },
+  { slug: "switch", label: "POE Switches" },
+];
+
+/** A single labeled specification row, shown in the order given. */
+export interface SpecRow {
+  label: string;
+  value: string;
 }
 
 /**
- * A single product photo. `order` controls gallery ordering today and,
- * later, frame ordering for a multi-angle/360 viewer — adding this field
- * now does not commit the project to true 3D or a 360 capture; per the
- * 3d-web-experiences skill, that choice is made once real photos exist and
- * their actual angle coverage is known.
+ * Confirmed product data only — every field here is sourced directly from
+ * the manufacturer catalog text provided for this project. Nothing is
+ * invented: a product with no confirmed capabilities/accessories simply
+ * omits those fields rather than guessing.
  */
-export interface ProductImage {
-  order: number;
-  /** Path under /public, e.g. "/products/hasnet-cha1200/front.jpg". */
-  src: string;
-  /** Free-form angle label ("front", "back", "side", "detail", ...). */
-  angle?: string;
-  alt: LocalizedText;
-}
-
-/**
- * Confirmed technical specifications only. Add a field here the moment a
- * spec is confirmed by the manufacturer/client — never add one
- * speculatively or to "fill out" the shape.
- */
-export interface ProductSpecs {
-  megapixels: number;
-}
-
 export interface Product {
-  /** URL-safe identifier; also the folder name under public/products/. */
+  /** URL-safe identifier, derived from the model. */
   slug: string;
-  brand: string;
+  /** Exact manufacturer model code — never translated or altered. */
   model: string;
-  /** Optional until a real category taxonomy is defined. */
-  categorySlug?: string;
-  specs: ProductSpecs;
-  /** Optional descriptive copy — omitted until real content exists. */
-  description?: LocalizedText;
-  images: ProductImage[];
+  /** Product name as given in the catalog — a technical designation, not translated. */
+  name: string;
+  category: CategorySlug;
+  /** Path under /public, e.g. "/products/HT-BSD5BLT-M.webp". Shown only if the file exists; otherwise a placeholder renders. */
+  image: string;
+  /** null = price not set yet -> "السعر عند الاستفسار". */
+  priceIQD: number | null;
+  features: string[];
+  specs: SpecRow[];
+  /** Optional AI/detection capability highlights, where the catalog lists them. */
+  capabilities?: string[];
+  accessories?: string[];
+  /** Warranty text as given in the catalog. */
+  warranty?: string;
 }
