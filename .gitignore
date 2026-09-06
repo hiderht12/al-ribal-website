@@ -21,5 +21,9 @@ out/
 *.log
 npm-debug.log*
 
+# TypeScript / Next.js generated
+*.tsbuildinfo
+next-env.d.ts
+
 # Local Claude settings (personal overrides, not shared conventions)
 .claude/settings.local.json

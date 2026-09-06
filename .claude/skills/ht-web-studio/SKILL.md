@@ -1,13 +1,13 @@
 ---
 name: ht-web-studio
-description: Primary end-to-end workflow for web-development projects — planning, building, and delivering production-ready sites and web apps. Use at the start of any real build task (new project, new feature, or client request) and as the default mindset for web-development work in this template.
+description: Primary end-to-end workflow for web-development projects — planning, building, and delivering production-ready sites and web apps. Use at the start of any real build task (new project, new feature, or client request) and as the default mindset for web-development work on this project.
 ---
 
 # HT Web Studio
 
-The default workflow for building real websites and web applications from
-this template. It sets the overall approach — plan, understand, build,
-verify — and defers detailed rules to the specialized skills below.
+The default workflow for building real websites and web applications. It
+sets the overall approach — plan, understand, build, verify — and defers
+detailed rules to the specialized skills below.
 
 ## 1. Plan before building
 
@@ -16,9 +16,8 @@ verify — and defers detailed rules to the specialized skills below.
 - If requirements, scope, or the target platform (desktop/tablet/mobile,
   new project vs. existing one) are unclear, ask before building — a wrong
   guess costs more than one clarifying question.
-- Confirm where the work lives: a new `projects/<name>/` subfolder, an
-  existing project, or a separate repo (see root `CLAUDE.md`). Never build
-  app code into this repo's root.
+- This repo is the project — application code belongs in the repository
+  root (see root `CLAUDE.md`).
 
 ## 2. Understand before changing
 
@@ -66,7 +65,7 @@ verify — and defers detailed rules to the specialized skills below.
 
 - Test important functionality yourself before reporting completion —
   don't rely on "it should work."
-- Run the `ship-checklist` skill before declaring any page, feature, or
+- Run the `testing-qa` skill before declaring any page, feature, or
   project finished.
 
 ## Scope

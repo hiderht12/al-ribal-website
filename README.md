@@ -1,51 +1,45 @@
-# HT Claude Studio
+# Al-Ribal Website
 
-A permanent, reusable starter template for web-development work with
-[Claude Code](https://claude.ai/code). This repo holds no application code
-— it's the shared foundation (conventions, skills, folder structure) that
-every new project should start from.
+This is the real project repository for the Al-Ribal website. It was
+created from the HT Claude Studio template, and now holds the actual
+application code alongside the reusable Claude Code conventions and skills
+the project was bootstrapped with.
 
 ## What's here
 
 ```
-CLAUDE.md              Root instructions Claude Code reads automatically
-.claude/skills/        Reusable, project-agnostic Claude Code skills
-docs/                  Standing conventions shared across projects
-templates/             Proven starter project skeletons (empty until one exists)
+CLAUDE.md               Root instructions Claude Code reads automatically
+.claude/skills/         Reusable Claude Code skills for this project
+docs/                   Standing conventions for this project
+templates/              Inherited starter skeletons (currently empty)
 ```
 
 - **`CLAUDE.md`** — tells Claude Code what this repo is and how to work in
-  it (e.g. don't build an app in the repo root; where new work should go).
-- **`.claude/skills/`** — skills for design-system decisions, project
-  scaffolding, and a pre-ship quality checklist. See
+  it: this is the project, and application code lives in the repository
+  root.
+- **`.claude/skills/`** — skills for workflow, design-system decisions,
+  project scaffolding, UI/UX, Arabic/RTL, SEO/performance, API
+  integrations, dashboards, 3D/visualization, and testing/QA. See
   `.claude/skills/README.md` for the full list.
-- **`docs/`** — cross-project conventions (code style, structure, git
-  practices) that apply regardless of which stack a given project uses.
-- **`templates/`** — starter skeletons for a new project to copy from,
-  added only once a setup has actually been used and proven, not
-  speculatively.
+- **`docs/`** — standing conventions (code style, structure, git practices)
+  for this project.
+- **`templates/`** — inherited from the starter template; not actively
+  used for this project.
 
-## How to use this as a template
+## Working in this repo
 
-1. **Start a new project from it**: use GitHub's "Use this template"
-   button (or `git clone` this repo) to create a new repo for the actual
-   product. `CLAUDE.md`, `.claude/skills/`, and `docs/` come with it, so
-   Claude Code has the same conventions and quality bar from the first
-   commit.
-2. **Or build inside this repo as a subfolder**: if you'd rather keep
-   everything in one place, create the project under `projects/<name>/`
-   and keep that project's dependencies, build output, and app code
-   scoped to that folder — never in this repo's root.
-3. **Feed learnings back**: when a project surfaces a convention, skill,
-   or starter setup worth reusing, generalize it and add it back here
-   (a new skill in `.claude/skills/`, a doc in `docs/`, or a proven setup
-   in `templates/`) so the next project benefits too.
+- Application code, dependencies, and build output belong in the
+  repository root alongside `CLAUDE.md`, `.claude/`, `docs/`, and
+  `templates/` — there is no separate project subfolder or repo to route
+  work into.
+- When a convention, checklist, or piece of reusable know-how should apply
+  consistently across the site, add it to `.claude/skills/` (as a skill)
+  or `docs/` (as a reference doc) rather than burying it in application
+  code or one-off notes.
 
 ## Philosophy
 
-- This repo stays technology-agnostic and empty of app code by design —
-  it's infrastructure for future projects, not a project itself.
-- Add to it only when something is genuinely reusable across projects,
-  not speculatively. See each skill's own guidance for when it applies.
-- The `ship-checklist` skill is the bar every project is expected to
-  clear before being called done — rendering isn't done.
+- Don't add a skill or doc speculatively — add it when a real need in this
+  project surfaces.
+- Keep `CLAUDE.md` itself high-level; put stack-specific or structural
+  detail in `docs/`.

@@ -1,8 +1,8 @@
 # Conventions
 
-Standing decisions that apply across projects started from this template.
-Keep this file to genuinely cross-project conventions — anything specific
-to one project's stack or domain belongs in that project's own docs.
+Standing decisions for this project. Keep this file to genuinely
+project-wide conventions — anything specific to one feature or one-off
+decision belongs closer to that code, not here.
 
 ## Code style
 
@@ -13,11 +13,10 @@ to one project's stack or domain belongs in that project's own docs.
 
 ## Structure
 
-- Application code for a given project stays inside that project's own
-  folder or repo — never mixed into this template repo's root.
-- Reusable, cross-project know-how (skills, checklists, stack notes) goes
-  back into this repo (`.claude/skills/`, `docs/`) once it's proven on a
-  real project, not before.
+- Application code lives in the repository root, alongside `.claude/`,
+  `docs/`, and the project's own config.
+- Reusable know-how (skills, checklists, stack notes) belongs in
+  `.claude/skills/` or `docs/` once it's proven useful, not speculatively.
 
 ## Git
 

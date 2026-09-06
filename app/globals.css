@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens — single source of truth (design-system skill).
+ * Components must reuse these tokens (bg-ink-950, text-gold-500,
+ * rounded-md, shadow-raised, font-heading, ...) rather than hardcoding
+ * one-off colors, radii, shadows, or font names.
+ */
+@theme {
+  /* Palette: black, gold, white are the brand. Semantic colors are kept
+     visually distinct from brand gold so status/brand meaning never mix. */
+  --color-ink-950: #0a0a0b;
+  --color-ink-900: #131316;
+  --color-ink-800: #1d1d21;
+  --color-ink-700: #2b2b30;
+  --color-ink-600: #46464c;
+  --color-ink-500: #6e6e76;
+  --color-ink-400: #97979e;
+  --color-ink-300: #c4c4c9;
+  --color-ink-200: #e2e2e5;
+  --color-ink-100: #f1f1f3;
+  --color-ink-50: #fafafa;
+
+  --color-gold-700: #7a5c15;
+  --color-gold-600: #96731b;
+  --color-gold-500: #c9a227;
+  --color-gold-400: #ddbb55;
+  --color-gold-300: #ebd48c;
+  --color-gold-100: #f8efd9;
+
+  --color-success: #2e9e5b;
+  --color-warning: #c2790f;
+  --color-error: #d64545;
+  --color-info: #3b6e91;
+
+  /* Radius: deliberately restrained — nothing on the site exceeds --radius-md.
+     Precision over softness is the brand cue, not an accident. */
+  --radius-none: 0px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-full: 9999px;
+
+  /* Elevation: hairline borders do the separation job at rest; shadow is
+     only ever a hover/raised signal, never decorative. No blur/glass. */
+  --shadow-resting: 0 1px 2px rgb(0 0 0 / 0.06);
+  --shadow-raised: 0 8px 24px rgb(0 0 0 / 0.12);
+  --shadow-raised-dark: 0 0 0 1px rgb(201 162 39 / 0.3), 0 4px 16px rgb(0 0 0 / 0.4);
+
+  /* Typography: semantic role names, not font names. See lib/fonts.ts. */
+  --font-heading: var(--font-plex-arabic), var(--font-plex-latin), ui-sans-serif,
+    system-ui, sans-serif;
+  --font-body: var(--font-plex-arabic), var(--font-plex-latin), ui-sans-serif,
+    system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  body {
+    @apply bg-ink-50 font-body text-ink-950 antialiased;
+    /*
+     * Arabic-first default: Arabic script needs more vertical room than
+     * Latin at the same size. When the English/LTR locale is added, its
+     * layout should override this to ~1.6 rather than reusing this value.
+     */
+    line-height: 1.9;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading font-semibold;
+    line-height: 1.2;
+  }
+}

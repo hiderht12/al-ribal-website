@@ -1,6 +1,6 @@
 ---
 name: frontend-scaffold
-description: Choose a stack and lay out folder structure when starting a new web project from this template. Use at the very start of a new build, before any UI code is written.
+description: Choose a stack and lay out folder structure when starting a new web project. Use at the very start of a new build, before any UI code is written.
 ---
 
 # Frontend Scaffold
@@ -24,10 +24,9 @@ Whatever the stack, keep a clear separation:
 - Shared/reusable UI pieces separated from one-off page-specific pieces.
 - Config, env, and build tooling at the project root, not buried in `src/`.
 
-If this project lives inside `HT-Claude-Studio` as a subfolder rather than
-its own repo, keep all of the above inside that subfolder — never mix a
-real project's dependencies, build output, or app code into this repo's
-root.
+This repo is the real project — apply the structure above directly in the
+repository root. There is no separate subfolder or repo to route the work
+into.
 
 ## Before writing the first component
 
