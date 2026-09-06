@@ -59,6 +59,12 @@
     color-scheme: light;
   }
 
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
   body {
     @apply bg-ink-50 font-body text-ink-950 antialiased;
     /*

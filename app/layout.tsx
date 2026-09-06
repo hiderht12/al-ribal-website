@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import { SiteFooter } from "@/components/site/site-footer";
+import { SiteHeader } from "@/components/site/site-header";
 import { fontVariables } from "@/lib/fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Al-Ribal",
-  description: "Al-Ribal — security, surveillance, and networking solutions.",
+  title: "الريبال الذهبي",
+  description: "الريبال الذهبي — حلول المراقبة الأمنية والشبكات.",
 };
 
 /**
@@ -20,7 +22,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ar" dir="rtl" className={fontVariables}>
-      <body className="min-h-screen">{children}</body>
+      <body className="min-h-screen">
+        <SiteHeader />
+        {children}
+        <SiteFooter />
+      </body>
     </html>
   );
 }
