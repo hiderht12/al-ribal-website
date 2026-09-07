@@ -1,7 +1,10 @@
 import { FrameViewer } from "@/components/product/frame-viewer";
+import { buttonVariants } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { getProductBySlug } from "@/lib/products";
+import { cn } from "@/lib/utils";
+import { buildWhatsAppLink } from "@/lib/whatsapp";
 
 /**
  * Covers both "featured product area" and "BSD4BLT product showcase" as
@@ -44,6 +47,16 @@ export function FeaturedProduct() {
               </dd>
             </div>
           </dl>
+          <a
+            href={buildWhatsAppLink(
+              `مرحباً، أرغب بطلب ${product.brand} ${product.model} وتركيبه.`,
+            )}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={cn(buttonVariants({ variant: "primary", size: "lg" }), "self-start")}
+          >
+            اطلب هذا المنتج عبر واتساب
+          </a>
         </div>
         <div className="order-1 lg:order-2">
           <FrameViewer

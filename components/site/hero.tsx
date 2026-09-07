@@ -1,6 +1,7 @@
 import { buttonVariants } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
+import { buildWhatsAppLink } from "@/lib/whatsapp";
 
 export function Hero() {
   return (
@@ -18,8 +19,13 @@ export function Hero() {
           الموثوق والدقة الفنية.
         </p>
         <div className="flex flex-wrap gap-4 pt-2">
-          <a href="#contact" className={buttonVariants({ variant: "primary", size: "lg" })}>
-            اطلب عرض سعر
+          <a
+            href={buildWhatsAppLink()}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={buttonVariants({ variant: "primary", size: "lg" })}
+          >
+            اطلب عرض سعر عبر واتساب
           </a>
           <a
             href="#bsd4blt"

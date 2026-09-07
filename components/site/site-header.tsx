@@ -4,6 +4,7 @@ import * as React from "react";
 import { buttonVariants } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { cn } from "@/lib/utils";
+import { buildWhatsAppLink } from "@/lib/whatsapp";
 import { NAV_LINKS } from "./nav-links";
 
 /**
@@ -51,7 +52,9 @@ export function SiteHeader() {
         </nav>
 
         <a
-          href="#contact"
+          href={buildWhatsAppLink()}
+          target="_blank"
+          rel="noopener noreferrer"
           className={cn(buttonVariants({ variant: "primary", size: "sm" }), "hidden lg:inline-flex")}
         >
           اطلب عرض سعر
@@ -118,7 +121,9 @@ export function SiteHeader() {
           </a>
         ))}
         <a
-          href="#contact"
+          href={buildWhatsAppLink()}
+          target="_blank"
+          rel="noopener noreferrer"
           onClick={() => setOpen(false)}
           className={cn(buttonVariants({ variant: "primary" }), "mt-4 justify-center")}
         >
